@@ -1,8 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { json } from 'stream/consumers';
 import { Lead } from '../../typing'
+import {dbQuery, getLeads} from './dbQueries';
 
-import mysql from 'mysql2/promise'
-import { db_connection } from '../../db'
+
+
+
+
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     // res.status(200).json({ name: 'John Doe' })
@@ -14,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         const newLead:Lead = req.body;
         console.log(newLead)
 
-        db_connection.connect()
+       
 
 
 
@@ -24,16 +28,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         } else if(req.method === 'GET'){
             // Handle any other HTTP method
-            db_connection.query(
-                'SELECT * FROM `logs`',
-                function(err, results, fields) {
-                  console.log(results); // results contains rows returned by server
-                  console.log(fields); // fields contains extra meta data about results, if available
+            
+            //  const result= await getLeads()
+             const result= await dbQuery(``)
+            // console.log(result)
 
-                  res.status(200).json({ queryResults: results })
-
-                }
-              );
+           res.status(200).json({ queryResults: result })
+           
 
             
         }
