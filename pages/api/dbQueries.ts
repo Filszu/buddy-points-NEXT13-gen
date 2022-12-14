@@ -8,7 +8,8 @@ export async function dbQuery(query: string){
 
     try{
       
-        const q ='SELECT * FROM `logs`';
+        // const q ='SELECT * FROM `logs`';
+        const q = query;
         const [rows] = await connection.execute(q);
 
         connection.end();
@@ -17,13 +18,19 @@ export async function dbQuery(query: string){
       
     }
     catch(err){
-        console.log(`-------------------------------------------`)
+        // console.log(`-------------------------------------------`)
         console.log(err)
+        return err
     }
     
       
 }
 
-export async function getLeads(){
-    return {filip:'xxx'}
+export async function getLeads(page:number, limit:number){
+    return await dbQuery('SELECT * FROM `logs`')
+}
+
+export async function getPrograms(page:number, limit:number){
+    const rowsLimit = limit?limit:10;
+    return await dbQuery(`SELECT * FROM offers LIMIT ${rowsLimit}`)
 }

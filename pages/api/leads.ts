@@ -1,11 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { json } from 'stream/consumers';
 import { Lead } from '../../typing'
 import {dbQuery, getLeads} from './dbQueries';
 
 
 
-
+export const config = {
+    api: {
+      bodyParser: {
+        sizeLimit: '500kb',
+        
+      },
+    },
+  }
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -29,8 +35,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         } else if(req.method === 'GET'){
             // Handle any other HTTP method
             
-            //  const result= await getLeads()
-             const result= await dbQuery(``)
+             const result= await getLeads(1,10)
+            //  const result= await dbQuery(``)
             // console.log(result)
 
            res.status(200).json({ queryResults: result })
