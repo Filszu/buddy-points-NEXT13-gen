@@ -26,3 +26,22 @@ export type Lead = {
     user_referer: string;
     country_code: string;
 }
+
+
+
+export type Program = {
+    offer_id: string;
+    offer_name: string;
+    subid: string;
+    subid1: string;
+    currency: string;
+    date: string;
+    pl_rates: number,
+    us_rates: number,
+    imgUrl: string;
+    description: string;
+    terms: string;
+    link: string;
+  };
+
+export type Programs = Program[];

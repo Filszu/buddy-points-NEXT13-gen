@@ -1,26 +1,78 @@
-html,
-body {
+*{
+  margin:0;
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
+
+}
+html{
+  font-size: 70%;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.app{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #040108, #2a8890);
+  padding: 30px;
+  color: white;
+}
+.programmsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  /* align-items: baseline; */
+  justify-content: center;
+
+}
+
+.app__header{
+ 
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+ 
+}
+
+input{
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 25px 50px;
+  font-size: var(--main-font-size);
+  outline: none;
+  border: 3px solid transparent;
+ 
+  transition: all ease-in 0.1s;
+}
+
+input:focus{
+  border: 3px solid rgb(1, 1, 41);
+}
+
+.info{
+  display: grid;
+  place-items: center;
+}
+
+table{
+  border: 5px solid yellow;
+  border-radius: 12px;
+}
+
+td,th{
+  border: 3px solid yellow;
+  padding: 15px 5px;
+  border-radius: 12px;
 }
