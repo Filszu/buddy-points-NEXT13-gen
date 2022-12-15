@@ -25,6 +25,25 @@ body {
   background: linear-gradient(to bottom, #040108, #2a8890);
   padding: 30px;
   color: white;
+  
+}
+.container
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content
+{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  /* align-items: baseline; */
+  justify-content: center;
+
 }
 .programmsContainer{
   display: flex;
@@ -75,4 +94,8 @@ td,th{
   border: 3px solid yellow;
   padding: 15px 5px;
   border-radius: 12px;
+}
+
+img{
+  max-width: 100%;
 }

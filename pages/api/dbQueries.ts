@@ -27,7 +27,7 @@ export async function dbQuery(query: string){
 }
 
 export async function getLeads(page:number, limit:number){
-    return await dbQuery('SELECT * FROM `logs`')
+    return await dbQuery('SELECT * FROM `leads`')
 }
 
 export async function getPrograms(page:number, limit:number){
